@@ -9,7 +9,7 @@ materials: ["Project Resources/*.*","Club Leader Resources/*.*"]
 
 #Wstęp:  { .intro}
 
-W tym projekcie nauczysz się jak stworzyć graficzny interfejs użytkownika (ang. _graphical user interface_, GUI), poprzez stworzenie Pokedexu (programu, za pomocą którego wyszukasz informacje o Pokemonach).
+W tym projekcie nauczysz się jak stworzyć graficzny interfejs użytkownika (ang. _graphical user interface_, GUI), na przykładzie Pokedexu, czyli programu do wyszukiwania informacji o Pokemonach.
 
 Tak będzie wyglądał Twój Pokedex:
 
@@ -147,7 +147,7 @@ Masz teraz wiele różnych widżetów w swoim GUI, możesz teraz zmienić ich wy
 + Możesz też zmienić czcionkę każdego z widżetów. Jest to możliwe dzięki stworzeniu zmiennych, które będą zawierały informacje o różnych czcionkach. Dodaj poniższy kod do swojego programu zaraz po lini, która importuje moduł `tkinter`:
 
     ```python
-    małaCzcionke = ["Helvetica" , 14]
+    małaCzcionka= ["Helvetica" , 14]
     średniaCzcionka = ["Helvetica" , 18]
     dużaCzcionka = ["Helvetica" , 30]
     ```
@@ -175,7 +175,7 @@ Dodaj czcionki i kolory do swojego Pokedexa tak by wyglądał jeszcze atrakcyjni
 
 ![screenshot](gui-pokedex-style.png)
 
-Twój Pokedex może wyglądać inaczej, niż ten przedstawiony powyżej. Możesz używać różnych czcionek, np. `Times`, `Courier` lub jakiejkolwiek innej czcionki, którą masz zainstalowaną na komputerze. Możesz również wybrać swoją własną <a href="https://www.tcl.tk/man/tcl8.6/TkCmd/colors.htm">colours</a> (including <a href="http://www.colorpicker.com/">hex colours</a>).
+Twój Pokedex może wyglądać inaczej, niż ten przedstawiony powyżej. Możesz używać różnych czcionek, np. `Times`, `Courier` lub jakiejkolwiek innej czcionki, którą masz zainstalowaną na komputerze. Możesz również wybrać swój własny kolor <a href="https://www.tcl.tk/man/tcl8.6/TkCmd/colors.htm">colours</a> (włączając <a href="http://www.colorpicker.com/">hex colours</a>).
 
 ## Zapisz swój projekt {.save}
 
@@ -234,7 +234,7 @@ Twój GUI wygląda świetnie, dodajmy teraz przycisk, który wyświetli informac
 
 ## Zapisz swój projekt {.save}
 
-## Challenge: Dokończ swój Pokedex { .challenge}
+## Wyzwanie: Dokończ swój Pokedex { .challenge}
 + Add code to your `showPokemonData()` function to display the attack, defence and speed of a Pokemon. You'll need to know that the dictionary keys are:
 	+ Attack - `pokemonDictionary["attack"])`
 	+ Defence - `pokemonDictionary["defense"])` (notice the American spelling!)
@@ -246,13 +246,13 @@ Twój GUI wygląda świetnie, dodajmy teraz przycisk, który wyświetli informac
 
 ## Zapisz swój projekt {.save}
 
-#Step 4: (Optional) Dodawanie obrazka { .activity }
+#Step 4: (Dla chętnych) Dodawanie obrazka { .activity }
 
 Możesz również wyświetlić obrazek wybranego z Pokedexa Pokemona!
 
 ![screenshot](67.png)
 
-## Note { .challenge }
+## Uwaga { .challenge }
 Poniższy krok możesz wykonać gdy masz zainstalowany na swoim komputerze moduł 'pillow'. Jeśli nie jesteś pewien, spytaj swojego nauczyciela o pomoc.
 
 ## Lista aktywności { .check}
@@ -260,8 +260,8 @@ Poniższy krok możesz wykonać gdy masz zainstalowany na swoim komputerze modu�
 + It's quite hard to display a Pokemon image in your Pokedex, but don't worry - there's a `getPokemonImage()` function in the `pokeapi.py` file to do the hard work for you! This function gets the Pokemon image, which can be displayed in a label. First, let's create a label to display the image in. Add this code somewhere in your main program, with the other labels:
 
     ```python
-    #label for the pokemon image
-    lblImage = tkinter.Label(window)
+    #etykieta dla obrazka Pokemona
+    lblImage = tkinter.Label(okno)
     lblImage.config(bg="#e0e0ff", fg="#111111")
     lblImage.pack()
     ```
@@ -290,7 +290,7 @@ Poniższy krok możesz wykonać gdy masz zainstalowany na swoim komputerze modu�
         lblImage.image = pokemonImage
     ```
 
-+ Kiedy uruchomisz swój program i klikniesz "Pobierz Pokemona!" powinieneś zobaczyć obrazek!
++ Kiedy uruchomisz swój program i klikniesz "Pobierz Pokemona!" powinieneś zobaczyć poniższy obrazek!
 
     ![screenshot](gui-pokedex-image.png)
 

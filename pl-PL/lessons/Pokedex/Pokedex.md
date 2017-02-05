@@ -261,9 +261,9 @@ Poniższy krok możesz wykonać gdy masz zainstalowany na swoim komputerze modu�
 
     ```python
     #etykieta dla obrazka Pokemona
-    etykietaObraz = tkinter.Label(okno)
-    etykietaObraz.config(bg="#e0e0ff", fg="#111111")
-    etykietaObraz.pack()
+    etykietaObrazek = tkinter.Label(okno)
+    etykietaObrazek.config(bg="#e0e0ff", fg="#111111")
+    etykietaObrazek.pack()
     ```
 
 + Teraz możesz zmodyfikować funkcję `pokazDaneOPokemonie()` aby wyświetlała informacje o obrazku:
@@ -276,7 +276,7 @@ Poniższy krok możesz wykonać gdy masz zainstalowany na swoim komputerze modu�
 
         #użyj funkcji do pobrania informacji o Pokemonie i jego obrazka
         słownikPokemonów = getPokemonData(numerPokemona)
-        pokemonImage = getPokemonImage(numerPokemona)
+        obrazekPokemona = getPokemonImage(numerPokemona)
 
         #wyświetl dane dotyczące Pokemona za pomocą etykiet
         etykietaNazwaWartosc.configure(text = słownikPokemonów["name"])
@@ -286,8 +286,8 @@ Poniższy krok możesz wykonać gdy masz zainstalowany na swoim komputerze modu�
         etykietaSzybkoscWartosc.configure(text = słownikPokemonów["speed"])
         
         #dodaj obrazek i jego etykietę
-        etykietaObraz.pack.configure(image=pokemonImage)
-        etykietaObraz.pack.image = pokemonImage
+        etykietaObrazek.pack.configure(image=obrazekPokemona)
+        etykietaObrazek.pack.image = pokemonImage
     ```
 
 + Kiedy uruchomisz swój program i klikniesz "Pobierz Pokemona!" powinieneś zobaczyć poniższy obrazek!

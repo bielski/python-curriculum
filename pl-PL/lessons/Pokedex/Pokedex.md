@@ -135,9 +135,9 @@ Masz wiele różnych widżetów w swoim GUI, możesz teraz zmienić ich wygląd.
     etykietaNazwa = Label(okno,text="Nazwa:")
     etykietaNazwa.config(bg="#e0e0ff", fg="#111111")
     etykietaNazwa.pack()
-    etykietaNazwaWartość = Label(okno,text="???")
-    etykietaNazwaWartość.config(bg="#e0e0ff", fg="#111111")
-    etykietaNazwaWartość.pack()
+    etykietaNazwaWartosc = Label(okno,text="???")
+    etykietaNazwaWartosc.config(bg="#e0e0ff", fg="#111111")
+    etykietaNazwaWartosc.pack()
     ```
 
     ![screenshot](gui-colour.png)
@@ -159,9 +159,9 @@ Masz wiele różnych widżetów w swoim GUI, możesz teraz zmienić ich wygląd.
     etykietaNazwa = Label(okno,text="Nazwa:")
     etykietaNazwa.config(bg="#e0e0ff", fg="#111111", font=średniaCzcionka)
     etykietaNazwa.pack()
-    etykietaNazwaWartość = Label(okno,text="???")
-    etykietaNazwaWartość.config(bg="#e0e0ff", fg="#111111", font=dużaCzcionka)
-    etykietaNazwaWartość.pack()
+    etykietaNazwaWartosc = Label(okno,text="???")
+    etykietaNazwaWartosc.config(bg="#e0e0ff", fg="#111111", font=dużaCzcionka)
+    etykietaNazwaWartosc.pack()
     ```
 
     Dodaliśmy `font=średniaCzcionka` and `font=dużaCzcionka` do `.config()`.
@@ -200,11 +200,11 @@ Twoje GUI wygląda świetnie, dodajmy teraz przycisk, który wyświetli informac
     	numerPokemona = tekstNumerPokemona.get()
     	
         #użyj funkcji z pliku 'pokeapi.py' aby pobrać informacje o Pokemonie
-    	słownikPokemonów = pobierzInfoOPokemonie(numerPokemona)
+    	słownikPokemonów = getPokemonData(numerPokemona)
 
     	#wyświetl dane dotyczące Pokemona za pomocą etykiet
-    	etykietaNazwa.configure(text = słownikPokemonów["Nazwa"])
-    	etykietaObrażeniaWartość.configure(text = słownikPokemonów["Ilość obrażeń"])
+    	etykietaNazwa.configure(text = słownikPokemonów["Name"])
+    	etykietaObrażeniaWartosc.configure(text = słownikPokemonów["Ilość obrażeń"])
     ```
 
     Nie musisz przejmować się jak działa funkcja `pobierzInfoOPokemonie()`. Ważne jest by zrozumieć, że funkcja zwraca (ang. _return_) dane w postaci słownika. Jest on później użyty w celu wyświetlenia etykiet z nazwą i ilością obrażeń Pokemona. 
@@ -219,7 +219,7 @@ Twoje GUI wygląda świetnie, dodajmy teraz przycisk, który wyświetli informac
 
     ![screenshot](gui-command.png)
 
-+ Możesz zmodyfikować bieżącą grę i stworzyć jej nową wersję, Top Pokemony. Wystarczy, że usuniesz pole do wprowadzania numeru Pokemona i pokażesz losowo wybrane stworzenie. Aby to uczynić, zmodyfikuj funkcję `showPokemonData()` w następujący sposób:
++ Możesz zmodyfikować bieżącą grę i stworzyć jej nową wersję, Top Pokemony. Wystarczy, że usuniesz pole do wprowadzania numeru Pokemona i pokażesz losowo wybrane stworzenie. Aby to uczynić, zmodyfikuj funkcję `pokazDaneOPokemonie()` w następujący sposób:
 
     ```python
     #funkcja wyświetla informacje o Pokemonie z konkretnym numerem
@@ -235,7 +235,7 @@ Twoje GUI wygląda świetnie, dodajmy teraz przycisk, który wyświetli informac
 ## Zapisz swój projekt {.save}
 
 ## Wyzwanie: Dokończ swój Pokedex { .challenge}
-+ Dodaj kod do funkcji `showPokemonData()`, który wyświetli informacje o zdolności do ataku, obrony i szybkości Pokemona. Aby to uczynić, potrzebna będzie wiedza o wartości kluczy słownika:
++ Dodaj kod do funkcji `pokazDaneOPokemonie()`, który wyświetli informacje o zdolności do ataku, obrony i szybkości Pokemona. Aby to uczynić, potrzebna będzie wiedza o wartości kluczy słownika:
 	+ Atak - `słownikPokemonów["attack"])`
 	+ Obrona - `słownikPokemonów["defense"])` (notice the American spelling!)
 	+ Szybkość - `słownikPokemonów["speed"])`
@@ -253,11 +253,11 @@ Możesz również wyświetlić obrazek wybranego z Pokedexa Pokemona!
 ![screenshot](67.png)
 
 ## Uwaga { .challenge }
-Poniższy krok możesz wykonać gdy masz zainstalowany na swoim komputerze moduł 'pillow'. Jeśli nie jesteś pewien, spytaj swojego nauczyciela o pomoc.
+Poniższy krok możesz wykonać gdy masz zainstalowany na swoim komputerze moduł 'pillow'. Jeśli nie jesteś pewien, spytaj o pomoc swojego nauczyciela.
 
 ## Lista aktywności { .check}
 
-+ Dość trudno wyświetlić obrazek Pokemona w Twoim Pokedexie. Na pomoc przychodzi funkcja `getPokemonImage()` w pliku `pokeapi.py`, pomoże Ci w tym zadaniu! Funkcja ta pobiera obrazek Pokemona, które może zostać wyświetlone w etykiecie. Najpierw musimy utworzyć etykietę. Dodaj poniższy kod w swoim głównym programie, w miejscu gdzie definiowane są inne etykiety:
++ Wyświetlenie obrazka Pokemona w Twoim Pokedexie nie jest łatwym zadaniem. Na pomoc przychodzi funkcja `getPokemonImage()` w pliku `pokeapi.py`, pomoże Ci w tym zadaniu! Funkcja ta pobiera obrazek Pokemona, które może zostać wyświetlone w etykiecie. Najpierw musimy utworzyć etykietę. Dodaj poniższy kod w swoim głównym programie, w miejscu gdzie definiowane są inne etykiety:
 
     ```python
     #etykieta dla obrazka Pokemona
@@ -266,7 +266,7 @@ Poniższy krok możesz wykonać gdy masz zainstalowany na swoim komputerze modu�
     etykietaObraz.pack()
     ```
 
-+ Teraz możesz zmodyfikować funkcję `showPokemonData()` aby wyświetlała informacje o obrazku:
++ Teraz możesz zmodyfikować funkcję `pokazDaneOPokemonie()` aby wyświetlała informacje o obrazku:
 
     ```python
     #funkcja wyświetla informacje o Pokemonie z konkretnym numerem
@@ -279,11 +279,11 @@ Poniższy krok możesz wykonać gdy masz zainstalowany na swoim komputerze modu�
         pokemonImage = getPokemonImage(numerPokemona)
 
         #wyświetl dane dotyczące Pokemona za pomocą etykiet
-        lblNameValue.configure(text = słownikPokemonów["name"])
-        lblHPValue.configure(text = słownikPokemonów["hp"])
-        lblAttackValue.configure(text = słownikPokemonów["attack"])
-        lblDefenceValue.configure(text = słownikPokemonów["defense"])
-        lblSpeedValue.configure(text = słownikPokemonów["speed"])
+        etykietaNazwaWartosc.configure(text = słownikPokemonów["name"])
+        etykietaObrazeniaWartosc.configure(text = słownikPokemonów["hp"])
+        etykietaAtakWartosc.configure(text = słownikPokemonów["attack"])
+        etykietaObronaWartosc.configure(text = słownikPokemonów["defense"])
+        etykietaSzybkoscWartosc.configure(text = słownikPokemonów["speed"])
         
         #dodaj obrazek i jego etykietę
         etykietaObraz.pack.configure(image=pokemonImage)
